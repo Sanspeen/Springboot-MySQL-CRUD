@@ -2,7 +2,6 @@ package com.example.demo.controllers;
 
 import com.example.demo.models.UserModel;
 import com.example.demo.services.UserService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +26,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id){
         userService.deleteUser(id);
+    }
+
+    @PutMapping("/{id}")
+    public UserModel updateUser(@RequestBody UserModel body, @PathVariable Long id){
+        return userService.updateUserByID(body, id);
     }
 
 }

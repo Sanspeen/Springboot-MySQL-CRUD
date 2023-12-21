@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/user")
@@ -17,6 +18,18 @@ public class UserController {
     public ArrayList<UserModel> getAllUsers(){
         return userService.getAllUsers();
     }
+
+    @GetMapping("/get-by-priority/{priority}")
+    public ArrayList<UserModel> getUsersByPriority(@PathVariable Integer priority){
+        return userService.getUsersByPriority(priority);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<UserModel> getUserByID(@PathVariable Long id){
+        return userService.getUserByID(id);
+    }
+
+
 
     @PostMapping()
     public UserModel saveUser(@RequestBody UserModel body){

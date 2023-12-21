@@ -11,8 +11,7 @@ public class UserModel {
     private Long id;
     private String name;
     private String email;
-    private Integer property;
-
+    private Integer priority;
 
     public Long getId() {
         return id;
@@ -38,11 +37,11 @@ public class UserModel {
         this.email = email;
     }
 
-    public Integer getProperty() {
-        return property;
+    public Integer getPriority() {
+        return priority;
     }
 
-    public void setProperty(Integer property) {
-        this.property = property;
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 }

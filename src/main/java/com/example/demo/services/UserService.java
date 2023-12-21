@@ -18,16 +18,20 @@ public class UserService {
         return (ArrayList<UserModel>) userRepository.findAll();
     }
 
+    public Optional<UserModel> getUserByID(Long id){
+        return userRepository.findById(id);
+    }
+
+    public ArrayList<UserModel> getUsersByPriority(Integer priority){
+        return userRepository.findAllByPriority(priority);
+    }
+
     public UserModel saveUser(UserModel user){
         return userRepository.save(user);
     }
 
     public void deleteUser(Long id){
         userRepository.deleteById(id);
-    }
-
-    public Optional<UserModel> getUserByID(Long id){
-       return userRepository.findById(id);
     }
 
     public UserModel updateUserByID(UserModel updatedUser, Long id){

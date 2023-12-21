@@ -2,7 +2,7 @@ package com.example.demo.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "springuser")
 public class UserModel {
 
     @Id
